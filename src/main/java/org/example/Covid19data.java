@@ -2,6 +2,8 @@ package org.example;
 
 public class Covid19data {
 
+
+
     //*** attributes ***//
 
     private String region;
@@ -23,6 +25,14 @@ public class Covid19data {
         this.dato = dato;
     }
 
+
+    public String getRegion() {
+        return region;
+    }
+
+    public String getAldersgruppe() {
+        return aldersgruppe;
+    }
 
     @Override
     public String toString() {
