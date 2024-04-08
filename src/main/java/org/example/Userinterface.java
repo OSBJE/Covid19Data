@@ -17,9 +17,10 @@ public class Userinterface {
         System.out.println("1. Show unsorted data");
         System.out.println("2. Sort data after region");
         System.out.println("3. Sort data after aldersgruppe");
+        System.out.println("4. Sort multiple værdier");
 
 
-        int UserInput = 4;
+        int UserInput = 5;
         int SENTINNEL = 0;
 
         while(UserInput != SENTINNEL) {
@@ -28,6 +29,7 @@ public class Userinterface {
                 case 1 -> uSortData();
                 case 2 -> sortedDataRegion();
                 case 3 -> sortedDataAldersgruppe();
+                case 4 -> sortMultiple();
                 default -> System.out.println("Done and exit");
 
             }
@@ -63,6 +65,11 @@ public class Userinterface {
 
     }
 
+    public void sortMultiple () {
+        Collections.sort(covid, new RegionComparator().thenComparing(new AldersGruppeComparator()));
+        for (Covid19data data : covid) {
+            System.out.println(data);
+        }
 
-
+    }
 }
